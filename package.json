@@ -1,0 +1,41 @@
+{
+  "name": "fshare-cli",
+  "version": "1.0.0",
+  "repository": "https://github.com/namqdam/fshare-cli",
+  "author": "Nam Dam (namqdam@gmail.com)",
+  "license": "MIT",
+  "bin": "build/index.js",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "dev": "ts-node src/index.ts",
+    "compile": "./node_modules/.bin/pkg .",
+    "dist": "yarn build && yarn compile"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "minimist": "1.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "15.6.2",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/parser": "4.26.0",
+    "eslint": "7.27.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "node-downloader-helper": "1.0.18",
+    "pkg": "5.2.1",
+    "prettier": "2.3.0",
+    "rimraf": "3.0.2",
+    "ts-node": "10.0.0",
+    "typescript": "4.3.2"
+  },
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "targets": [
+      "node14-macos-arm64"
+    ],
+    "outputPath": "bin"
+  }
+}
